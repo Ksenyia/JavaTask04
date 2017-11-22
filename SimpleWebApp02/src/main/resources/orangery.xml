@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.com/flowers"
+         xsi:schemaLocation="http://www.example.com/flowers orangery.xsd">
+  
+    <perennials-flower id="f1" multiplying="cuttings">
+        <name>Peony</name>
+        <origin>Greece</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>75</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>20</temperature>
+            <watering>80</watering>
+        </growing-tips>
+    </perennials-flower>
+    <perennials-flower id="f2" multiplying="cuttings">
+        <name>Rose</name>
+        <origin>Greece</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>75</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>20</temperature>
+            <watering>80</watering>
+        </growing-tips>
+    </perennials-flower>    
+    <biennial-flower id="f3" multiplying="seeds">
+        <name>Forget-me-not</name>
+        <origin>Holland</origin>
+        <soil>podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Green</leaf-color>
+            <plant-size>10</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>20</temperature>
+            <watering>80</watering>
+        </growing-tips>
+    </biennial-flower>
+
+    
+    <biennial-flower id="f4" multiplying="seeds">
+        <name>Foxglove</name>
+        <origin>Holland</origin>
+        <soil>podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Green</leaf-color>
+            <plant-size>60</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>20</temperature>
+            <watering>80</watering>
+        </growing-tips>
+    </biennial-flower>
+    
+    
+    <biennial-flower id="f5" multiplying="seeds">
+        <name>Stock</name>
+        <origin>Asia</origin>
+        <soil>podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Violet</leaf-color>
+            <plant-size>30</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>22</temperature>
+            <watering>60</watering>
+        </growing-tips>
+    </biennial-flower>
+
+    <perennials-flower id="f6" multiplying="seeds">
+        <name>Kermek</name>
+        <origin>Central Asia</origin>
+        <soil>subsoil</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Blue</leaf-color>
+            <plant-size>40</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>18</temperature>
+            <watering>10</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <perennials-flower id="f7" multiplying="seeds">
+        <name>Abelia</name>
+        <origin>Japan</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Pink</leaf-color>
+            <plant-size>150</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>16</temperature>
+            <watering>70</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <annual-flower id="f8" multiplying="cuttings">
+        <name>Impatiens</name>
+        <origin>Africa</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Pink</leaf-color>
+            <plant-size>30</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>21</temperature>
+            <watering>170</watering>
+        </growing-tips>
+    </annual-flower>
+
+    <annual-flower id="f9" multiplying="seeds">
+        <name>Vallota</name>
+        <origin>South Africa</origin>
+        <soil>podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Red</leaf-color>
+            <plant-size>60</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>25</temperature>
+            <watering>90</watering>
+        </growing-tips>
+    </annual-flower>
+
+    <perennials-flower id="f10" multiplying="leaves">
+        <name>Hedychium</name>
+        <origin>South Asia</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Yellow</leaf-color>
+            <plant-size>45</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>27</temperature>
+            <watering>105</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <perennials-flower id="f11" multiplying="cuttings">
+        <name>Jasminum</name>
+        <origin>China</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>190</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <perennials-flower id="f12" multiplying="seeds">
+        <name>Iris</name>
+        <origin>Holland</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>40</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <perennials-flower id="f13" multiplying="seeds">
+        <name>Gerbera</name>
+        <origin>Holland</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Red</leaf-color>
+            <plant-size>60</plant-size>
+         </visual-parameters>
+         <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+         </growing-tips>
+    </perennials-flower>
+
+    <perennials-flower id="f14" multiplying="seeds">
+        <name>Tulip</name>
+        <origin>Iran</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Yellow</leaf-color>
+            <plant-size>30</plant-size>
+        </visual-parameters>
+         <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </perennials-flower>
+
+    <annual-flower id="f15" multiplying="cuttings">
+        <name>Chrysanthemum</name>
+        <origin>Asia</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>55</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </annual-flower>
+
+    <biennial-flower id="f16" multiplying="cuttings">
+        <name>Lily</name>
+        <origin>Greece</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>White</leaf-color>
+            <plant-size>90</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </biennial-flower>
+
+    <annual-flower id="f17" multiplying="cuttings">
+        <name>Clove</name>
+        <origin>Germany</origin>
+        <soil>sod-podzolic</soil>
+        <visual-parameters>
+            <stem-color>Green</stem-color>
+            <leaf-color>Red</leaf-color>
+            <plant-size>70</plant-size>
+        </visual-parameters>
+        <growing-tips>
+            <temperature>19</temperature>
+            <watering>85</watering>
+        </growing-tips>
+    </annual-flower>
+</flowers>
