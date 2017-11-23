@@ -4,6 +4,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import by.tr.web.controller.Controller;
 import by.tr.web.entity.Growing;
+import by.tr.web.entity.TagName;
 import by.tr.web.entity.TagName.FlowerTagName;
 import by.tr.web.entity.Visual;
 import by.tr.web.entity.flower.AnnualFlower;
@@ -47,27 +48,30 @@ public class FlowerSaxHandler extends DefaultHandler {
 		String message = "startElement -> " + "uri: " + uri + ", localName:" + localName + ", qName: " + qName;
 		log.info(message);
 		text = new StringBuilder();
-		if (qName.equals("annual-flower")){ 
+		FlowerTagName tagName = FlowerTagName.valueOf(qName.toUpperCase().replace("-", "_"));
+		if (tagName==FlowerTagName.ANNUAL_FLOWER){ 
 			flower = new AnnualFlower();
-			flower.setId((attributes.getValue("id")));
-			flower.setMultiplying((attributes.getValue("multiplying")));
+			addAtributes(attributes);
 		}
-		if (qName.equals("biennial-flower")){ 
+		if (tagName==FlowerTagName.BIENNIAL_FLOWER){ 
 			flower = new BiennialFlower();
-			flower.setId((attributes.getValue("id")));
-			flower.setMultiplying((attributes.getValue("multiplying")));
+			addAtributes(attributes);
 		}
-		if (qName.equals("perennials-flower")){ 
+		if (tagName==FlowerTagName.PERENNIALS_FLOWER){ 
 			flower = new PerennialsFlower();
-			flower.setId((attributes.getValue("id")));
-			flower.setMultiplying((attributes.getValue("multiplying")));
+			addAtributes(attributes);
 		}
-		if (qName.equals("growing-tips")){ 
+		if (tagName==FlowerTagName.GROWING_TIPS){ 
 			growing = new Growing();
 		}
-		if (qName.equals("visual-parameters")){ 
+		if (tagName==FlowerTagName.VISUAL_PARAMETERS){ 
 			visual = new Visual();
 		}
+	}
+
+	private void addAtributes(Attributes attributes) {
+		flower.setId((attributes.getValue(TagName.ID)));
+		flower.setMultiplying((attributes.getValue(TagName.MULTIPLYING)));
 	}
 
 	public void characters(char[] buffer, int start, int length){ 

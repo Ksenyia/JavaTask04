@@ -11,18 +11,19 @@ import by.tr.web.entity.flower.Flower;
 
 public class DAOImpl implements DAO{
 
+public static final String fileName = "orangery.xml";
+	
 	public List<Flower> parseSAX() throws DAOExeption, SAXException {
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("orangery.xml").getFile());
+		File file = new File(classLoader.getResource(fileName).getFile());
 		
 		List<Flower> orangery = SaxParser.parse(file);
-
-
+		
 		return orangery;
 	}
 	public List<Flower> parseSTAX() throws DAOExeption {
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("orangery.xml").getFile());
+		File file = new File(classLoader.getResource(fileName).getFile());
 		
 		List<Flower> orangery = StaxParser.parse(file);
 
@@ -31,7 +32,7 @@ public class DAOImpl implements DAO{
 	}
 	public List<Flower> parseDOM() throws DAOExeption {
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("orangery.xml").getFile());
+		File file = new File(classLoader.getResource(fileName).getFile());
 		
 		List<Flower> orangery = DomParser.parse(file);
 

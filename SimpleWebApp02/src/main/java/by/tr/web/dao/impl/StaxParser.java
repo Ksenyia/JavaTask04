@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
 
 import by.tr.web.controller.Controller;
 import by.tr.web.entity.Growing;
+import by.tr.web.entity.TagName;
 import by.tr.web.entity.TagName.FlowerTagName;
 import by.tr.web.entity.Visual;
 import by.tr.web.entity.flower.AnnualFlower;
@@ -38,8 +39,7 @@ public class StaxParser {
 				input = new FileInputStream((file));
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
-				String message = "";
-				log.error(message);
+				log.error("Error" + e.getMessage());
 			}
 			 
 
@@ -48,6 +48,7 @@ public class StaxParser {
 
 		} catch (XMLStreamException e) { 
 			e.printStackTrace();
+			log.error("Error" + e.getMessage());
 		}
 		return orangery;
 	}
@@ -67,24 +68,15 @@ public class StaxParser {
 				switch (elementName) {
 				case ANNUAL_FLOWER:
 					flower = new AnnualFlower();
-					String idAnnualFlower = reader.getAttributeValue(null, "id");
-					String multiplyingAnnualFlower = reader.getAttributeValue(null, "multiplying");
-					flower.setId(idAnnualFlower);
-					flower.setMultiplying(multiplyingAnnualFlower);
+					addAttributes(reader, flower);
 					break;
 				case BIENNIAL_FLOWER:
 					flower = new BiennialFlower();
-					String idBiennialFlower = reader.getAttributeValue(null, "id");
-					String multiplyingBiennialFlower = reader.getAttributeValue(null, "multiplying");
-					flower.setId(idBiennialFlower);
-					flower.setMultiplying(multiplyingBiennialFlower);
+					addAttributes(reader, flower);
 					break;
 				case PERENNIALS_FLOWER:
 					flower = new PerennialsFlower();
-					String idPerennialsFlower = reader.getAttributeValue(null, "id");
-					String multiplyingPerennialsFlower = reader.getAttributeValue(null, "multiplying");
-					flower.setId(idPerennialsFlower);
-					flower.setMultiplying(multiplyingPerennialsFlower);
+					addAttributes(reader, flower);
 					break;
 				case VISUAL_PARAMETERS:
 					visual = new Visual();
@@ -160,5 +152,11 @@ public class StaxParser {
 
 		}
 		return orangery;
+	}
+	private static void addAttributes(XMLStreamReader reader, Flower flower) {
+		String idAnnualFlower = reader.getAttributeValue(null, TagName.ID);
+		String multiplyingAnnualFlower = reader.getAttributeValue(null, TagName.MULTIPLYING);
+		flower.setId(idAnnualFlower);
+		flower.setMultiplying(multiplyingAnnualFlower);
 	}
 }

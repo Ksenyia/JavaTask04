@@ -1,13 +1,17 @@
 package by.tr.web.entity;
 
 public class TagName {
+
+	public static final String MULTIPLYING = "multiplying";
+	public static final String ID = "id";
+	
+	
 	public enum FlowerTagName {
 		PERENNIALS_FLOWER, FLOWERS, ANNUAL_FLOWER, BIENNIAL_FLOWER,
 		VISUAL_PARAMETERS, GROWING_TIPS, 
 		NAME, ORIGIN,SOIL, TEMPERATURE, WATERING,
 		STEM_COLOR, LEAF_COLOR, PLANT_SIZE;
 		
-
 		public static FlowerTagName getElementTagName(String element) {
 			switch (element) {
 			case "flowers":
@@ -38,9 +42,12 @@ public class TagName {
 				return LEAF_COLOR;
 			case "plant-size":
 				return PLANT_SIZE;
-			default:
-				throw new EnumConstantNotPresentException(FlowerTagName.class, element);
 			}
+			return null;
+		}
+		
+		public  String getStringElementTagName() {
+			return this.toString().toLowerCase().replace('_', '-');
 		}
 	}
 
