@@ -24,8 +24,11 @@ public class Controller extends HttpServlet {
     public Controller() {
     	super();
     }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		log.info("do Post");
 		String requestAttribute = "naming";
 		String jspFile = "/information.jsp";
         HttpSession httpSession = request.getSession();
@@ -44,15 +47,12 @@ public class Controller extends HttpServlet {
         httpSession.setAttribute("countOfRecords", countOfRecords);
         int countOfPages = (int) Math.ceil(countOfRecords * 1.0 / recordsPerPage);
         httpSession.setAttribute("countOfPages", countOfPages);
-        Object obj = orangery;
-        httpSession.setAttribute(requestAttribute, obj);
- 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(jspFile);
-        dispatcher.include(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			doGet(request, response);
+        int firstPage = 1;
+        httpSession.setAttribute("currentPage",firstPage);
+	    Object obj = orangery;
+	    httpSession.setAttribute(requestAttribute, obj);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(jspFile);
+	    dispatcher.include(request, response);
 	}
 
 }
