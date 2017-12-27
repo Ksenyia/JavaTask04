@@ -6,8 +6,10 @@ import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import by.tr.web.controller.Controller;
-import by.tr.web.dao.DAO;
-import by.tr.web.dao.DAOFactory;
+import by.tr.web.dao.DOMBuilder;
+import by.tr.web.dao.Director;
+import by.tr.web.dao.SAXBuilder;
+import by.tr.web.dao.StAXBuilder;
 import by.tr.web.dao.exeption.DAOExeption;
 import by.tr.web.entity.flower.Flower;
 import by.tr.web.service.Service;
@@ -18,26 +20,24 @@ public class ServiceImpl implements Service{
 	private static final Logger log = Logger.getLogger(Controller.class);
 	public List<Flower> parse(String parser) throws ServiceExeption, SAXException {
 		log.info("parse");
-		DAOFactory factory = DAOFactory.getInstance();
-		DAO dao = factory.getDAO();
 		List<Flower> orangery = null;
 		if("SAX".equals(parser)){
 			try {
-				orangery = dao.parseSAX();
+				orangery = Director.createOrangery(new SAXBuilder());
 			} catch (DAOExeption e) {
 				throw  new ServiceExeption();
 			}
 		}
 		if("STAX".equals(parser)){
 			try {
-				orangery = dao.parseSTAX();
+				orangery = Director.createOrangery(new StAXBuilder());
 			} catch (DAOExeption e) {
 				throw  new ServiceExeption();
 			}
 		}
 		if("DOM".equals(parser)){
 			try {
-				orangery = dao.parseDOM();
+				orangery = Director.createOrangery(new DOMBuilder());
 			} catch (DAOExeption e) {
 				throw  new ServiceExeption();
 			}
