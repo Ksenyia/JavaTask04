@@ -8,8 +8,8 @@ import org.xml.sax.SAXException;
 import by.tr.web.controller.Controller;
 import by.tr.web.dao.DOMBuilder;
 import by.tr.web.dao.Director;
-import by.tr.web.dao.SAXBuilder;
-import by.tr.web.dao.StAXBuilder;
+import by.tr.web.dao.SAXDirector;
+import by.tr.web.dao.StAXDirector;
 import by.tr.web.dao.exeption.DAOExeption;
 import by.tr.web.entity.flower.Flower;
 import by.tr.web.service.Service;
@@ -23,14 +23,14 @@ public class ServiceImpl implements Service{
 		List<Flower> orangery = null;
 		if("SAX".equals(parser)){
 			try {
-				orangery = Director.createOrangery(new SAXBuilder());
+				orangery = Director.createOrangery(new SAXDirector());
 			} catch (DAOExeption e) {
 				throw  new ServiceExeption();
 			}
 		}
 		if("STAX".equals(parser)){
 			try {
-				orangery = Director.createOrangery(new StAXBuilder());
+				orangery = Director.createOrangery(new StAXDirector());
 			} catch (DAOExeption e) {
 				throw  new ServiceExeption();
 			}

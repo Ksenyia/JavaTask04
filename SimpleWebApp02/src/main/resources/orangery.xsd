@@ -88,12 +88,6 @@
             <maxInclusive value="60"></maxInclusive>
         </restriction>
     </simpleType>
-        <simpleType name="Bloom">
-        <restriction base="integer">
-            <minInclusive value="3"></minInclusive>
-            <maxInclusive value="20"></maxInclusive>
-        </restriction>
-    </simpleType>
     <element name="flower" type="tns:Flower" abstract="true" />
     <element name="perennials-flower" type="tns:Perennials" substitutionGroup="tns:flower" />
     <element name="biennial-flower" type="tns:Biennial" substitutionGroup="tns:flower" />

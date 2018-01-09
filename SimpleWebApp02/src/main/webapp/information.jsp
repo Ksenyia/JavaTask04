@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	  <c:if test="${param.page != null}"> 
+<c:if test="${param.page != null}"> 
 	<c:set var = "currentPage" value="${param.page}"/>
 </c:if>
 <c:if test="${param.page == null}"> 
@@ -72,7 +72,12 @@
                         <td>${i}</td>
                     </c:when>
                     <c:otherwise>
-                        <td><a href="information.jsp?page=${i}" name = "page" >${i}</a></td>
+                        <td>
+                        	<form action="Controller"  method = "post">
+                        	<input type="hidden"  name = "pageNew2" value = "${i}">
+                        	<a href="information.jsp?page=${i}" onclick="post()" name = "pageNew" >${i}</a>
+                        </form>
+                        </td>
                     </c:otherwise>
                 </c:choose>
             </c:forEach>  
@@ -84,5 +89,11 @@
     </c:if>
     </form>
 </c:if>
+<script>
+function post() {
+   var pageNew2 = document.forms[0]["pageNew2"].value;
+   pageNew2.submit();
+}
+</script>
 </body>
 </html>

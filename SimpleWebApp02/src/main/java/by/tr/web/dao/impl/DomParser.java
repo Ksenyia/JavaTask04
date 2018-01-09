@@ -31,6 +31,7 @@ public class DomParser {
 	
 	public DomParser() {
 	}
+	
 	public static List<Flower> parse(File file) throws DAOExeption {
 		DOMParser parser = new DOMParser(); 
 		try {
@@ -48,7 +49,8 @@ public class DomParser {
 		
 		return orangery;
 
-		}
+	}
+	
 	private static void addFlower(List<Flower> orangery, NodeList flowerNodes, int i) {
 		Flower flower = null;
 		FlowerTagName elementName = FlowerTagName.getElementTagName(flowerNodes.item(i).getNodeName());
@@ -68,6 +70,7 @@ public class DomParser {
 			orangery.add(flower);
 		}
 	}
+	
 	private static void getFlower(NodeList flowerNodes, Flower flower, int i) {
 		Element flowerElement = (Element) flowerNodes.item(i);
 		flower.setId(flowerElement.getAttribute(TagName.ID));
@@ -80,6 +83,7 @@ public class DomParser {
 		flower.setVisualParameters(visual);
 		flower.setGrowingTips(growing);
 	}
+	
 	private static Growing getGrowingTips(Element flowerElement) {
 		Growing growing = new Growing();
 		Element growingElement = (Element)getSingleChild(flowerElement, FlowerTagName.GROWING_TIPS.getStringElementTagName());
@@ -89,6 +93,7 @@ public class DomParser {
 		growing.setWatering(watering);
 		return growing;
 	}
+	
 	private static Visual getVisualParametrs(Element flowerElement) {
 		Visual visual = new Visual();
 		Element visualElement = (Element)getSingleChild(flowerElement, FlowerTagName.VISUAL_PARAMETERS.getStringElementTagName());

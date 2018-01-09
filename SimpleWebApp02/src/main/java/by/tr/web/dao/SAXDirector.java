@@ -11,7 +11,7 @@ import by.tr.web.dao.exeption.DAOExeption;
 import by.tr.web.dao.impl.SaxParser;
 import by.tr.web.entity.flower.Flower;
 
-public class SAXBuilder extends BaseBuilder {
+public class SAXDirector extends BaseBuilder {
 
 	public static final String fileName = "orangery.xml";
 	private static final Logger log = Logger.getLogger(Controller.class);

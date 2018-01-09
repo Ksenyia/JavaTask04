@@ -28,7 +28,14 @@ public class Controller extends HttpServlet {
 		doPost(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		log.info("do Post");
+		int recordsPerPage = 5;
+        int firstPage = 1;
+        double convertIntToDouble = 1.0;
+		String massage = "do Post";
+		log.info(massage); 
+		System.out.print("click");
+		System.out.print(request.getParameterNames());
+		System.out.print(request.getParameter("pageNew2"));
 		String requestAttribute = "naming";
 		String jspFile = "/information.jsp";
         HttpSession httpSession = request.getSession();
@@ -42,13 +49,15 @@ public class Controller extends HttpServlet {
         	log.error(e.getMessage());
 		}
         int countOfRecords = orangery.size();
-        int recordsPerPage = 5;
-        httpSession.setAttribute("recordsPerPage", recordsPerPage);
-        httpSession.setAttribute("countOfRecords", countOfRecords);
-        int countOfPages = (int) Math.ceil(countOfRecords * 1.0 / recordsPerPage);
-        httpSession.setAttribute("countOfPages", countOfPages);
-        int firstPage = 1;
-        httpSession.setAttribute("currentPage",firstPage);
+        String recordsPerPageAttr = "recordsPerPage";
+		httpSession.setAttribute(recordsPerPageAttr, recordsPerPage);
+        String countOfRecordsAttr = "countOfRecords";
+		httpSession.setAttribute(countOfRecordsAttr, countOfRecords);
+        int countOfPages = (int) Math.ceil(countOfRecords * convertIntToDouble / recordsPerPage);
+        String countOfPageAttr = "countOfPages";
+		httpSession.setAttribute(countOfPageAttr, countOfPages);
+        String currentPageAttr = "currentPage";
+		httpSession.setAttribute(currentPageAttr,firstPage);
 	    Object obj = orangery;
 	    httpSession.setAttribute(requestAttribute, obj);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(jspFile);
