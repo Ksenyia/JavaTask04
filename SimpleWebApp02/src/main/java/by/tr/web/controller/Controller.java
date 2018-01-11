@@ -33,9 +33,6 @@ public class Controller extends HttpServlet {
         double convertIntToDouble = 1.0;
 		String massage = "do Post";
 		log.info(massage); 
-		System.out.print("click");
-		System.out.print(request.getParameterNames());
-		System.out.print(request.getParameter("pageNew2"));
 		String requestAttribute = "naming";
 		String jspFile = "/information.jsp";
         HttpSession httpSession = request.getSession();
